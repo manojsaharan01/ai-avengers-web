@@ -20,13 +20,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#E5E5E2] bg-[#FDFDFB] mt-24">
+    <footer className="border-gradient-top bg-[#FDFDFB] mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#043927] rounded-md flex items-center justify-center">
+            <Link href="/" className="flex items-center gap-2 mb-4 group">
+              <div className="w-8 h-8 bg-[#043927] rounded-md flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <span className="text-[#DAA520] text-sm font-bold font-mono">AA</span>
               </div>
               <span className="font-serif font-semibold text-[#043927] text-lg">AI Avengers</span>
@@ -50,7 +50,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[#6B6B67] hover:text-[#043927] transition-colors"
+                      className="text-sm text-[#6B6B67] hover:text-[#043927] transition-colors link-underline inline-block"
                       {...(link.href.startsWith('http') || link.href.startsWith('mailto')
                         ? { target: '_blank', rel: 'noopener noreferrer' }
                         : {})}
@@ -66,7 +66,10 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-[#E5E5E2] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#6B6B67]">
           <p>© {new Date().getFullYear()} AI Avengers / TTW AI. All rights reserved.</p>
-          <p>Built with Claude Code + Sanity + Next.js</p>
+          <p className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] inline-block" />
+            Built with Next.js + Sanity
+          </p>
         </div>
       </div>
     </footer>

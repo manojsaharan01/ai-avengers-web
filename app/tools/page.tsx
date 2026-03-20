@@ -37,15 +37,19 @@ export default async function ToolsPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
       {/* Header */}
       <div className="mb-4">
-        <h1 className="font-serif text-5xl font-semibold text-[#043927] mb-4">The Sovereign Stack</h1>
+        <h1 className="font-serif text-5xl font-semibold text-[#043927] mb-4">
+          The Sovereign Stack
+          <span className="block h-1 w-16 bg-[#DAA520] rounded-full mt-3" />
+        </h1>
         <p className="text-lg text-[#6B6B67] max-w-2xl leading-relaxed">
           We replaced $1,100/month in GHL with a $30/mo open-source stack. Every tool here is reviewed, rated, and actively used — no affiliate fluff.
         </p>
       </div>
 
       {/* Savings banner */}
-      <div className="mt-8 mb-14 p-6 bg-[#043927] rounded-xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
+      <div className="mt-8 mb-14 p-6 bg-[#043927] rounded-xl text-white flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(218,165,32,0.12)_0%,_transparent_50%)] pointer-events-none" />
+        <div className="relative z-10">
           <div className="font-serif text-3xl font-semibold text-[#DAA520]">$12,840/year saved</div>
           <div className="text-[#e8f4ef]/80 mt-1">GHL ($1,100/mo) → Sovereign Stack (~$30/mo)</div>
         </div>
@@ -53,7 +57,7 @@ export default async function ToolsPage() {
           href="https://www.skool.com/ai-avengers-3116"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 px-6 py-2.5 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-colors text-sm"
+          className="relative z-10 flex-shrink-0 px-6 py-2.5 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-all text-sm hover:shadow-lg"
         >
           Get the full stack guide
         </Link>
@@ -89,6 +93,7 @@ export default async function ToolsPage() {
 
       {tools.length === 0 && (
         <div className="text-center py-24 border-2 border-dashed border-[#E5E5E2] rounded-2xl">
+          <div className="font-serif text-7xl text-[#043927]/10 mb-4 select-none">AA</div>
           <p className="font-serif text-2xl text-[#043927] mb-3">Stack reviews dropping soon.</p>
           <p className="text-[#6B6B67]">We&apos;re writing up every tool we use — check back shortly.</p>
         </div>
@@ -100,7 +105,7 @@ export default async function ToolsPage() {
 function ToolCard({ tool }: { tool: any }) {
   return (
     <Link href={`/tools/${tool.slug.current}`} className="group">
-      <div className="h-full bg-white border border-[#E5E5E2] rounded-xl p-5 hover:border-[#043927]/30 hover:shadow-sm transition-all">
+      <div className="h-full bg-white border border-[#E5E5E2] rounded-xl p-5 transition-lift group-hover:border-[#043927]/20">
         <div className="flex items-start gap-3 mb-4">
           {tool.logo?.asset ? (
             <Image
@@ -111,7 +116,7 @@ function ToolCard({ tool }: { tool: any }) {
               className="w-12 h-12 rounded-lg object-contain bg-[#e8f4ef] p-1"
             />
           ) : (
-            <div className="w-12 h-12 rounded-lg bg-[#e8f4ef] flex items-center justify-center text-[#043927] font-bold text-lg">
+            <div className="w-12 h-12 rounded-lg bg-[#e8f4ef] flex items-center justify-center text-[#043927] font-bold text-lg transition-transform duration-200 group-hover:scale-110">
               {tool.title.charAt(0)}
             </div>
           )}
@@ -140,7 +145,7 @@ function ToolCard({ tool }: { tool: any }) {
           {tool.rating && (
             <div className="flex">
               {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className={`text-sm ${i < tool.rating ? 'text-[#DAA520]' : 'text-[#E5E5E2]'}`}>
+                <span key={i} className={`text-base ${i < tool.rating ? 'text-[#DAA520]' : 'text-[#E5E5E2]'}`}>
                   ★
                 </span>
               ))}

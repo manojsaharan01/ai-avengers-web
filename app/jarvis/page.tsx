@@ -87,27 +87,28 @@ export default function JarvisPage() {
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6 border-b border-[#E5E5E2]">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#043927] text-white rounded-full px-4 py-1.5 mb-6 text-sm font-medium">
-            <span className="w-2 h-2 rounded-full bg-[#DAA520] inline-block" />
+          <div className="animate-fade-in-up inline-flex items-center gap-2 bg-[#043927] text-white rounded-full px-4 py-1.5 mb-6 text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#DAA520] inline-block animate-pulse" />
             Open source · MIT license · Lab members only
           </div>
 
-          <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-[#043927] leading-tight mb-6">
+          <h1 className="animate-fade-in-up-delay-1 font-serif text-5xl sm:text-6xl font-semibold text-[#043927] leading-tight mb-6">
             The CRM that belongs<br />
-            <em className="not-italic text-[#DAA520]">to you. Not them.</em>
+            <em className="not-italic text-gradient-gold">to you. Not them.</em>
           </h1>
 
-          <p className="text-xl text-[#6B6B67] max-w-2xl mx-auto leading-relaxed mb-4">
+          <p className="animate-fade-in-up-delay-2 text-xl text-[#6B6B67] max-w-2xl mx-auto leading-relaxed mb-4">
             Jarvis is an AI-native CRM that runs locally on your Mac. No subscriptions. No data sharing. No pricing surprises. One command to install — yours forever.
           </p>
-          <p className="text-base text-[#6B6B67] max-w-xl mx-auto mb-10">
+          <p className="animate-fade-in-up-delay-3 text-base text-[#6B6B67] max-w-xl mx-auto mb-10">
             Built on OpenClaw (MIT). The same stack we use at AI Avengers to manage 3,000+ contacts, run campaigns, and close deals — for $35/mo total.
           </p>
 
           {/* Install command */}
-          <div className="inline-flex items-center gap-4 bg-[#043927] text-white rounded-xl px-6 py-4 font-mono text-lg mb-8 shadow-lg">
+          <div className="animate-fade-in-up-delay-3 inline-flex items-center gap-4 bg-[#043927] text-white rounded-xl px-6 py-4 font-mono text-lg mb-8 shadow-lg">
             <span className="text-[#DAA520]">$</span>
             <span>npx openclaw</span>
+            <span className="animate-blink text-[#DAA520]">▌</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -115,7 +116,7 @@ export default function JarvisPage() {
               href="https://www.skool.com/ai-avengers-3116"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-3.5 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-colors text-base"
+              className="inline-flex items-center px-8 py-3.5 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-all text-base hover:shadow-lg"
             >
               Get Jarvis via AI Avengers Lab
               <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -126,7 +127,7 @@ export default function JarvisPage() {
               href="https://github.com/denchhq/openclaw"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-3.5 border border-[#043927] text-[#043927] font-semibold rounded-lg hover:bg-[#e8f4ef] transition-colors text-base gap-2"
+              className="inline-flex items-center px-8 py-3.5 border border-[#043927] text-[#043927] font-semibold rounded-lg hover:bg-[#e8f4ef] transition-all text-base gap-2 hover:shadow-md"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
@@ -153,7 +154,7 @@ export default function JarvisPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {stackItems.map(({ tool, replaces, cost, icon }) => (
-              <div key={tool} className="bg-white/5 border border-white/10 rounded-xl p-5">
+              <div key={tool} className="bg-white/5 border border-white/10 rounded-xl p-5 transition-all duration-200 hover:bg-white/[0.08] hover:border-[#DAA520]/30">
                 <div className="flex items-start justify-between mb-3">
                   <span className="text-2xl">{icon}</span>
                   <span className="text-xs font-semibold text-[#DAA520] bg-[#DAA520]/10 px-2 py-0.5 rounded-full">
@@ -166,7 +167,7 @@ export default function JarvisPage() {
             ))}
           </div>
 
-          <div className="mt-8 p-5 bg-white/5 border border-[#DAA520]/30 rounded-xl text-center">
+          <div className="mt-8 p-5 bg-white/5 border border-[#DAA520]/30 rounded-xl text-center animate-pulse-gold">
             <span className="font-serif text-3xl font-semibold text-[#DAA520]">$12,840</span>
             <span className="text-[#e8f4ef]/80 ml-3 text-lg">saved per year. Not because we cut — because we stopped renting.</span>
           </div>
@@ -187,8 +188,8 @@ export default function JarvisPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map(({ icon, title, desc }) => (
-              <div key={title} className="p-6 border border-[#E5E5E2] rounded-xl bg-white hover:border-[#043927]/20 hover:shadow-sm transition-all">
-                <span className="text-3xl mb-4 block">{icon}</span>
+              <div key={title} className="p-6 border border-[#E5E5E2] rounded-xl bg-white transition-lift group">
+                <span className="text-3xl mb-4 block transition-transform duration-200 group-hover:scale-110">{icon}</span>
                 <h3 className="font-serif font-semibold text-[#043927] mb-2 leading-snug">{title}</h3>
                 <p className="text-sm text-[#6B6B67] leading-relaxed">{desc}</p>
               </div>
@@ -210,12 +211,12 @@ export default function JarvisPage() {
           <div className="space-y-6">
             {steps.map(({ num, title, code, desc }) => (
               <div key={num} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#043927] flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#043927] flex items-center justify-center transition-all duration-200 hover:scale-110 hover:ring-2 hover:ring-[#DAA520]/30">
                   <span className="font-mono text-sm font-bold text-[#DAA520]">{num}</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-[#043927] text-lg mb-2">{title}</h3>
-                  <pre className="bg-[#043927] text-[#e8f4ef] rounded-lg px-5 py-3 text-sm font-mono mb-2 overflow-x-auto">
+                  <pre className="bg-[#043927] text-[#e8f4ef] rounded-lg px-5 py-3 text-sm font-mono mb-2 overflow-x-auto shadow-[var(--shadow-card)]">
                     <code>{code}</code>
                   </pre>
                   <p className="text-sm text-[#6B6B67]">{desc}</p>
@@ -275,6 +276,7 @@ export default function JarvisPage() {
                 <div className="mt-4 text-white">You: Draft a follow-up sequence for these 47</div>
                 <div className="text-[#DAA520] mt-2">Jarvis: Generating 3-step sequence...</div>
                 <div className="text-[#22C55E]">✓ Sequence ready. Preview? [Y/n]</div>
+                <div className="mt-3 text-[#DAA520]">$ <span className="animate-blink">▌</span></div>
               </div>
             </div>
           </div>
@@ -311,7 +313,7 @@ export default function JarvisPage() {
                 fit: 'Built for you',
               },
             ].map(({ type, desc, fit }) => (
-              <div key={type} className="p-6 bg-white/5 border border-white/10 rounded-xl">
+              <div key={type} className="p-6 bg-white/5 border border-white/10 rounded-xl transition-all duration-200 hover:bg-white/[0.08] hover:border-[#DAA520]/30">
                 <div className="text-xs font-semibold text-[#DAA520] uppercase tracking-wider mb-3">{fit}</div>
                 <h3 className="font-serif text-xl font-semibold text-white mb-3">{type}</h3>
                 <p className="text-sm text-[#e8f4ef]/70 leading-relaxed">{desc}</p>
@@ -324,22 +326,24 @@ export default function JarvisPage() {
       {/* ── Final CTA ─────────────────────────────────────────────────── */}
       <section className="py-24 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-[#043927] mb-4">
+          <div className="bg-[#043927] rounded-2xl p-10 sm:p-14 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(218,165,32,0.15)_0%,_transparent_60%)] pointer-events-none" />
+          <h2 className="font-serif text-4xl font-semibold text-white mb-4 relative z-10">
             Get Jarvis inside AI Avengers Lab.
           </h2>
-          <p className="text-[#6B6B67] text-lg leading-relaxed mb-3">
+          <p className="text-[#e8f4ef]/80 text-lg leading-relaxed mb-3 relative z-10">
             The full Jarvis setup guide — every screen, every credential, every config — is inside AI Avengers Lab. We walk you through the install live and troubleshoot your specific setup.
           </p>
-          <p className="text-[#6B6B67] mb-10">
-            Founding price: <strong className="text-[#043927]">$20/mo</strong> — closes soon. Then $89/mo.
+          <p className="text-[#e8f4ef]/60 mb-10 relative z-10">
+            Founding price: <strong className="text-white">$20/mo</strong> — closes soon. Then $89/mo.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Link
               href="https://www.skool.com/ai-avengers-3116"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-[#043927] text-white font-bold rounded-lg hover:bg-[#032a1e] transition-colors text-lg"
+              className="inline-flex items-center px-8 py-4 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-all text-lg hover:shadow-lg"
             >
               Join Lab — $20/mo founding
             </Link>
@@ -347,7 +351,7 @@ export default function JarvisPage() {
               href="https://github.com/denchhq/openclaw"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 border border-[#043927] text-[#043927] font-semibold rounded-lg hover:bg-[#e8f4ef] transition-colors text-lg gap-2"
+              className="inline-flex items-center px-8 py-4 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all text-lg gap-2"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
@@ -356,10 +360,11 @@ export default function JarvisPage() {
             </a>
           </div>
 
-          <p className="mt-8 text-sm text-[#6B6B67]">
+          <p className="mt-8 text-sm text-[#e8f4ef]/60 relative z-10">
             Jarvis is built on OpenClaw — MIT licensed, open source, community-maintained.
             <br />It&apos;s free to self-install. The Lab gives you the setup walkthrough, live support, and the full AI Avengers community.
           </p>
+          </div>
         </div>
       </section>
     </div>

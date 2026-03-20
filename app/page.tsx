@@ -18,26 +18,26 @@ export default async function HomePage() {
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#e8f4ef] border border-[#043927]/20 rounded-full px-4 py-1.5 mb-6">
+          <div className="animate-fade-in-up inline-flex items-center gap-2 bg-[#e8f4ef] border border-[#043927]/20 rounded-full px-4 py-1.5 mb-6 animate-pulse-gold">
             <span className="w-2 h-2 rounded-full bg-[#DAA520] animate-pulse inline-block" />
             <span className="text-sm font-medium text-[#043927]">Founding window open — $20/mo locks in forever</span>
           </div>
 
-          <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-[#043927] leading-tight mb-6">
+          <h1 className="animate-fade-in-up-delay-1 font-serif text-5xl sm:text-6xl font-semibold text-[#043927] leading-tight mb-6">
             Stop studying AI.<br />
-            <em className="not-italic text-[#DAA520]">Start owning it.</em>
+            <em className="not-italic text-gradient-gold">Start owning it.</em>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#6B6B67] max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="animate-fade-in-up-delay-2 text-lg sm:text-xl text-[#6B6B67] max-w-2xl mx-auto leading-relaxed mb-10">
             AI Avengers Lab is a private community for professionals and business owners who are done watching and ready to build. Live AI builds, sovereign stack tools, and people who actually ship.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="animate-fade-in-up-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="https://www.skool.com/ai-avengers-3116"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-3.5 bg-[#043927] text-white font-semibold rounded-lg hover:bg-[#032a1e] transition-colors text-base shadow-sm"
+              className="inline-flex items-center px-8 py-3.5 bg-[#043927] text-white font-semibold rounded-lg hover:bg-[#032a1e] transition-all text-base shadow-sm hover:shadow-md"
             >
               Join AI Avengers Lab — $20/mo
               <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -46,12 +46,12 @@ export default async function HomePage() {
             </Link>
             <Link
               href="/jarvis"
-              className="inline-flex items-center px-8 py-3.5 border border-[#043927] text-[#043927] font-semibold rounded-lg hover:bg-[#e8f4ef] transition-colors text-base"
+              className="inline-flex items-center px-8 py-3.5 border border-[#043927] text-[#043927] font-semibold rounded-lg hover:bg-[#e8f4ef] transition-all text-base"
             >
               Meet Jarvis →
             </Link>
           </div>
-          <p className="mt-4 text-sm text-[#6B6B67]">Founding price closes in 7 days. Then $89/mo.</p>
+          <p className="animate-fade-in-up-delay-4 mt-4 text-sm text-[#6B6B67]">Founding price closes in 7 days. Then $89/mo.</p>
         </div>
 
         {/* Stats bar */}
@@ -62,8 +62,8 @@ export default async function HomePage() {
             { metric: '$0', label: 'Jarvis CRM cost' },
             { metric: '$20/mo', label: 'Lab founding price' },
           ].map(({ metric, label }) => (
-            <div key={label} className="bg-[#FDFDFB] px-6 py-5 text-center">
-              <div className="font-serif text-2xl font-semibold text-[#043927]">{metric}</div>
+            <div key={label} className="bg-[#FDFDFB] px-6 py-5 text-center transition-all duration-200 hover:bg-[#e8f4ef]/50 group cursor-default">
+              <div className="font-serif text-2xl font-semibold text-[#043927] transition-transform duration-200 group-hover:scale-110">{metric}</div>
               <div className="text-xs text-[#6B6B67] mt-1">{label}</div>
             </div>
           ))}
@@ -90,8 +90,8 @@ export default async function HomePage() {
               { icon: '📊', title: 'Case studies', desc: 'Real results with real numbers. What was built, what it cost, what changed.' },
               { icon: '🏗️', title: 'Build your lane', desc: 'Lone wolves model — everyone ships their own thing. No group projects. No waiting on others.' },
             ].map(({ icon, title, desc }) => (
-              <div key={title} className="p-5 bg-white/5 border border-white/10 rounded-xl">
-                <span className="text-2xl mb-3 block">{icon}</span>
+              <div key={title} className="p-5 bg-white/5 border border-white/10 rounded-xl transition-all duration-200 hover:bg-white/[0.08] hover:border-[#DAA520]/30 group">
+                <span className="text-2xl mb-3 block transition-transform duration-200 group-hover:scale-110">{icon}</span>
                 <h3 className="font-semibold text-[#DAA520] mb-2">{title}</h3>
                 <p className="text-sm text-[#e8f4ef]/70 leading-relaxed">{desc}</p>
               </div>
@@ -111,13 +111,13 @@ export default async function HomePage() {
             <p className="text-[#6B6B67] text-lg leading-relaxed mb-6">
               Local-first AI CRM built on OpenClaw (MIT). Replaces GHL for $0. One command to install. Runs on your Mac. Your data never leaves your machine.
             </p>
-            <div className="bg-[#043927] rounded-xl px-5 py-3 font-mono text-[#e8f4ef] text-sm mb-6 inline-block">
+            <div className="bg-[#043927] rounded-xl px-5 py-3 font-mono text-[#e8f4ef] text-sm mb-6 inline-block shadow-md">
               <span className="text-[#DAA520]">$</span> npx openclaw
             </div>
             <div className="block">
               <Link
                 href="/jarvis"
-                className="inline-flex items-center text-[#043927] font-semibold hover:text-[#DAA520] transition-colors"
+                className="inline-flex items-center text-[#043927] font-semibold hover:text-[#DAA520] transition-colors link-underline"
               >
                 See everything Jarvis does →
               </Link>
@@ -130,7 +130,7 @@ export default async function HomePage() {
               { label: 'SMS via Twilio', val: '~$15/mo', sub: 'replaces $100/mo GHL' },
               { label: 'Calendar Cal.com', val: '$0', sub: 'replaces $50/mo GHL' },
             ].map(({ label, val, sub }) => (
-              <div key={label} className="p-4 border border-[#E5E5E2] rounded-xl bg-white">
+              <div key={label} className="p-4 border border-[#E5E5E2] rounded-xl bg-white transition-all duration-200 hover:shadow-md hover:border-[#043927]/20">
                 <div className="text-xs text-[#6B6B67] mb-1">{label}</div>
                 <div className="font-serif text-xl font-semibold text-[#043927]">{val}</div>
                 <div className="text-xs text-[#6B6B67] line-through mt-0.5">{sub}</div>
@@ -151,11 +151,11 @@ export default async function HomePage() {
             {offers.map((offer: any) => (
               <div
                 key={offer._id}
-                className="rounded-xl border-2 border-[#DAA520] bg-[#fdf3d0]/20 p-8 sm:p-10"
+                className="rounded-xl border-2 border-[#DAA520] bg-[#fdf3d0]/20 p-8 sm:p-10 shadow-lg"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                   <div>
-                    <span className="inline-flex items-center px-3 py-1 bg-[#DAA520] text-white text-xs font-semibold rounded-full mb-3">
+                    <span className="inline-flex items-center px-3 py-1 bg-[#DAA520] text-white text-xs font-semibold rounded-full mb-3 animate-pulse-gold">
                       Founding window — closes in 7 days
                     </span>
                     <h3 className="font-serif text-3xl font-semibold text-[#043927]">{offer.title}</h3>
@@ -184,7 +184,7 @@ export default async function HomePage() {
                     href={offer.cta.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full justify-center px-8 py-4 bg-[#043927] text-white font-bold rounded-lg hover:bg-[#032a1e] transition-colors text-lg"
+                    className="flex w-full justify-center px-8 py-4 bg-[#043927] text-white font-bold rounded-lg hover:bg-[#032a1e] transition-all text-lg hover:shadow-lg"
                   >
                     {offer.cta.label}
                   </Link>
@@ -204,13 +204,15 @@ export default async function HomePage() {
             </h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {testimonials.map((t: any) => (
-                <div key={t._id} className="bg-white rounded-xl p-6 border border-[#E5E5E2]">
+                <div key={t._id} className="bg-white rounded-xl p-6 border border-[#E5E5E2] transition-lift relative">
+                  {/* Decorative quote */}
+                  <div className="absolute top-3 right-4 font-serif text-5xl text-[#DAA520] opacity-15 leading-none select-none">&ldquo;</div>
                   <div className="flex mb-3">
                     {Array.from({ length: Number(t.rating) || 5 }).map((_: unknown, i: number) => (
                       <span key={i} className="text-[#DAA520] text-sm">★</span>
                     ))}
                   </div>
-                  <blockquote className="text-[#1A1A18] text-sm leading-relaxed mb-4">
+                  <blockquote className="text-[#1A1A18] text-sm leading-relaxed mb-4 relative z-10">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
                   <div className="flex items-center gap-3">
@@ -245,7 +247,7 @@ export default async function HomePage() {
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-10">
               <h2 className="font-serif text-4xl font-semibold text-[#043927]">From the Lab</h2>
-              <Link href="/blog" className="text-sm font-medium text-[#DAA520] hover:text-[#b8891a] transition-colors">
+              <Link href="/blog" className="text-sm font-medium text-[#DAA520] hover:text-[#b8891a] transition-colors link-underline">
                 All posts →
               </Link>
             </div>
@@ -254,14 +256,14 @@ export default async function HomePage() {
                 const slug = post.slug.current
                 return (
                   <Link key={post._id} href={`/blog/${slug}`} className="group">
-                    <article className="h-full bg-white rounded-xl border border-[#E5E5E2] overflow-hidden hover:border-[#043927]/30 transition-colors">
+                    <article className="h-full bg-white rounded-xl border border-[#E5E5E2] overflow-hidden transition-lift">
                       {post.featuredImage?.asset && (
-                        <div className="relative h-44 bg-[#e8f4ef]">
+                        <div className="relative h-44 bg-[#e8f4ef] overflow-hidden">
                           <Image
                             src={urlFor(post.featuredImage).width(600).height(350).url()}
                             alt={post.featuredImage.alt || post.title}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
                       )}
@@ -289,21 +291,23 @@ export default async function HomePage() {
       {/* ── Final CTA ───────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="bg-[#043927] rounded-2xl p-10 sm:p-14">
-            <h2 className="font-serif text-4xl font-semibold text-white mb-4">
+          <div className="bg-[#043927] rounded-2xl p-10 sm:p-14 relative overflow-hidden">
+            {/* Radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(218,165,32,0.15)_0%,_transparent_60%)] pointer-events-none" />
+            <h2 className="font-serif text-4xl font-semibold text-white mb-4 relative z-10">
               The window closes in 7 days.
             </h2>
-            <p className="text-[#e8f4ef]/80 text-lg mb-3 leading-relaxed">
+            <p className="text-[#e8f4ef]/80 text-lg mb-3 leading-relaxed relative z-10">
               $20/mo locks in permanently. When the founding window closes, new members pay $89/mo — forever.
             </p>
-            <p className="text-[#e8f4ef]/60 text-sm mb-8">
+            <p className="text-[#e8f4ef]/60 text-sm mb-8 relative z-10">
               This is the only time this price will exist.
             </p>
             <Link
               href="https://www.skool.com/ai-avengers-3116"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-colors text-lg"
+              className="relative z-10 inline-flex items-center px-8 py-4 bg-[#DAA520] text-[#043927] font-bold rounded-lg hover:bg-[#c4941c] transition-all text-lg hover:shadow-lg"
             >
               Join AI Avengers Lab — $20/mo
             </Link>
